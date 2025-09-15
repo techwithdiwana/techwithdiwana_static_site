@@ -1,0 +1,7 @@
+{
+  "products": [
+    {"id":1,"name":"Linux Basics Course","price":0, "image":""},
+    {"id":2,"name":"DevOps Projects Pack","price":299,"image":""},
+    {"id":3,"name":"Kubernetes Labs","price":499,"image":""}
+  ]
+}
