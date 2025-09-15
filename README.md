@@ -114,15 +114,15 @@ Demo: http://<your-ec2-ip> or https://your-domain.com
 
 ## 🛡 License
 
-This project is MIT licensed — see [LICENSE](./LICENSE).
+This project is MIT licensed — see <a href="./LICENSE">LICENSE</a>.
 
 ---
 
 ## 👨‍🏫 Author & Contact
-**Tech With Diwana**
+<b>Tech With Diwana</b><br>
 
-- [YouTube](https://youtube.com/@techwithdiwana)  
-- [Email](mailto:techwithdiwana@gmail.com)
+- <a href="https://youtube.com/@techwithdiwana" target="_blank">YouTube</a>  
+- <a href="mailto:techwithdiwana@gmail.com">Email</a>
 
 
 ## ✅ LICENSE File (MIT)
