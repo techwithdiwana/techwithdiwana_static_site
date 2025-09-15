@@ -1,6 +1,8 @@
-# Tech With Diwana — Static Website Demo
+# 🌐 Tech With Diwana - Static Website
 
-This repository contains a beginner-friendly static website demo you can host on Ubuntu/WSL using **nginx**.
+This repository contains the static website code for **Tech With Diwana**.  
+The site is built using **HTML, CSS, and JS**, and can be hosted on any web server.  
+Below are the steps to deploy this site on an **AWS EC2 Ubuntu server** using **Nginx**.
 
 ---
 
@@ -18,26 +20,36 @@ Homepage of **Tech With Diwana** static site (hero image):
 
 ---
 
-## 🚀 Quick setup (WSL / Ubuntu) — no Docker
+## 🚀 Deployment on AWS EC2 (Ubuntu + Nginx)
 
-1. Copy project to web root:
+### 1. Launch & Connect
+Launch a free-tier **Ubuntu EC2 instance** and connect via SSH:
 ```bash
-sudo mkdir -p /var/www/techwithdiwana
-sudo cp -r * /var/www/techwithdiwana/
-sudo chown -R $USER:$USER /var/www/techwithdiwana
-```
+ssh -i "your-key.pem" ubuntu@<EC2-PUBLIC-IP>
 
-2. Install nginx:
-```bash
+2. Install Nginx
+
 sudo apt update
 sudo apt install -y nginx
-```
 
-3. Create nginx site config `/etc/nginx/sites-available/techwithdiwana`:
-```nginx
+3. Clone Repository
+
+sudo mkdir -p /var/www/techwithdiwana
+sudo git clone https://github.com/devopswithdiwana/techwithdiwana_static_site.git /var/www/techwithdiwana
+
+4. Set Permissions
+
+sudo chown -R www-data:www-data /var/www/techwithdiwana
+sudo find /var/www/techwithdiwana -type d -exec chmod 755 {} \;
+sudo find /var/www/techwithdiwana -type f -exec chmod 644 {} \;
+
+5. Configure Nginx
+
+Create /etc/nginx/sites-available/techwithdiwana:
+
 server {
   listen 80;
-  server_name _;
+  server_name <EC2-PUBLIC-IP>;
 
   root /var/www/techwithdiwana;
   index index.html;
@@ -51,29 +63,41 @@ server {
     add_header Cache-Control "public";
   }
 }
-```
 
-4. Enable site & reload nginx:
-```bash
-sudo ln -sf /etc/nginx/sites-available/techwithdiwana /etc/nginx/sites-enabled/techwithdiwana
+
+Enable site & disable default:
+
+sudo ln -sf /etc/nginx/sites-available/techwithdiwana /etc/nginx/sites-enabled/
+sudo rm -f /etc/nginx/sites-enabled/default
+
+6. Test & Reload Nginx
+
 sudo nginx -t
-sudo systemctl restart nginx
-```
+sudo systemctl reload nginx
 
-5. Open browser: `http://localhost`
+7. Open in Browser
 
----
+Visit:
 
-## 📂 Files to push to git
-```bash
-git init
-git add .
-git commit -m "Initial commit — static site for Tech With Diwana"
-git remote add origin <your-repo-url>
-git push -u origin main
-```
+http://<EC2-PUBLIC-IP>
 
----
+📦 Project Structure
 
-## ℹ️ Note
-This project is created for **learning and demo purposes**.
+techwithdiwana_static_site/
+├── assets/
+├── css/
+├── js/
+├── index.html
+└── README.md
+
+📝 Notes
+
+. Replace <EC2-PUBLIC-IP> with your AWS public IP or domain.
+. For HTTPS, add a domain and install SSL using Let's Encrypt Certbot
+. This project is for learning and demo purposes.
+
+👨‍💻 Author
+
+Tech With Diwana
+
+https://www.youtube.com/@TechWithDiwana/
