@@ -112,19 +112,18 @@ git push origin feature/your-change
 If you host this repo on GitHub Pages / or on a server, add the demo URL here:
 Demo: http://<your-ec2-ip> or https://your-domain.com
 
+---
 ## 🛡 License
 
 This project is MIT licensed — see [LICENSE](./LICENSE).
 
+---
 
-👨‍🏫 Author & Contact
+## 👨‍🏫 Author & Contact
+**Tech With Diwana**
 
-Tech With Diwana
-
-[YouTube](https://youtube.com/@techwithdiwana)
-
-[Email](mailto:techwithdiwana@gmail.com)
-
+- [YouTube](https://youtube.com/@techwithdiwana)  
+- [Email](mailto:techwithdiwana@gmail.com)
 
 ---
 
