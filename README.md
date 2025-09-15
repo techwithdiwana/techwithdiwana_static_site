@@ -112,7 +112,6 @@ git push origin feature/your-change
 If you host this repo on GitHub Pages / or on a server, add the demo URL here:
 Demo: http://<your-ec2-ip> or https://your-domain.com
 
----
 ## 🛡 License
 
 This project is MIT licensed — see [LICENSE](./LICENSE).
@@ -125,7 +124,6 @@ This project is MIT licensed — see [LICENSE](./LICENSE).
 - [YouTube](https://youtube.com/@techwithdiwana)  
 - [Email](mailto:techwithdiwana@gmail.com)
 
----
 
 ## ✅ LICENSE File (MIT)
 
